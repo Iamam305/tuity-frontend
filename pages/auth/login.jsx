@@ -33,7 +33,7 @@ const Login = () => {
     <div className="relative py-16">
       <div className="container relative m-auto px-6 text-gray-500 md:px-12 xl:px-40">
         <div className="m-auto space-y-8 md:w-8/12 lg:w-6/12 xl:w-6/12">
-        <Image
+          <Image
             src={logo}
             loading="lazy"
             className="ml-4 w-36"

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React, { useContext } from "react";
-import { UserContext } from "../../pages/index.js";
+import { UserContext } from "../../pages/index.jsx";
 
 
 const Navbar = () => {
