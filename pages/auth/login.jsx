@@ -2,6 +2,8 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { loginUser } from "../../services/authService";
+import Image from "next/image";
+import logo from "../../public/logo2.png";
 
 const Login = () => {
   const [loginData, setLoginData] = useState({
@@ -10,11 +12,11 @@ const Login = () => {
   });
   const router = useRouter();
 
-  useEffect(() => {
-    if (localStorage.getItem("jwt")) {
-      router.push("/");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (localStorage.getItem("jwt")) {
+  //     router.push("/");
+  //   }
+  // }, [router]);
 
   const handleChange = (event) => {
     setLoginData({ ...loginData, [event.target.name]: event.target.value });
@@ -24,18 +26,18 @@ const Login = () => {
     // prevents the submit button from refreshing the page
     event.preventDefault();
     console.log(loginData);
-    loginUser({ ...loginData }).then(router.push("/"));
+    loginUser({ ...loginData });
   };
 
   return (
     <div className="relative py-16">
       <div className="container relative m-auto px-6 text-gray-500 md:px-12 xl:px-40">
         <div className="m-auto space-y-8 md:w-8/12 lg:w-6/12 xl:w-6/12">
-          <img
-            src="images/tailus.svg"
+        <Image
+            src={logo}
             loading="lazy"
             className="ml-4 w-36"
-            alt="tailus logo"
+            alt="tuity logo"
           />
           <div className="rounded-3xl border border-gray-100 bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 backdrop-blur-2xl">
             <div className="p-8 py-12 sm:p-16">
@@ -94,7 +96,7 @@ const Login = () => {
                   </span>
                 </button>
                 <p className="border-t border-gray-100 dark:border-gray-700 pt-6 text-sm text-gray-500 dark:text-gray-400">
-                  Don't have an account ?
+                  Don&apos;t have an account ?
                   <Link href="/auth/register" className="text-primary">
                     Sign up
                   </Link>
@@ -103,13 +105,13 @@ const Login = () => {
             </div>
           </div>
           <div className="space-x-4 text-center text-gray-500">
-            <span>© tailus</span>
-            <a href="#" className="text-sm hover:text-primary">
+            <span>© tuity</span>
+            {/* <a href="#" className="text-sm hover:text-primary">
               Contact
             </a>
             <a href="#" className="text-sm hover:text-primary">
               Privacy &amp; Terms
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

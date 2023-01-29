@@ -9,19 +9,19 @@ const Sidebar = () => {
     <aside className="fixed top-0 z-10 ml-[-100%] flex h-screen w-full flex-col justify-between border-r bg-white px-6 pb-3 transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%] dark:bg-gray-800 dark:border-gray-700">
       <div>
         <div className="-mx-6 px-6 py-4">
-          <a href="#" title="home">
+          {/* <a href="#" title="home">
             <img src="images/logo.svg" className="w-32" alt="tailus logo" />
-          </a>
+          </a> */}
         </div>
         <div className="mt-8 text-center">
-          <img
+          {/* <img
             src="images/second_user.webp"
             alt=""
             className="m-auto h-10 w-10 rounded-full object-cover lg:h-28 lg:w-28"
-          />
-          <h5 className="mt-4 hidden text-xl font-semibold text-gray-600 lg:block dark:text-gray-300">
+          /> */}
+          {/* <h5 className="mt-4 hidden text-xl font-semibold text-gray-600 lg:block dark:text-gray-300">
             Cynthia J. Watts
-          </h5>
+          </h5> */}
           <span className="hidden text-gray-400 lg:block">Admin</span>
         </div>
         <ul className="mt-8 space-y-2 tracking-wide">

@@ -16,11 +16,11 @@ const Register = () => {
   });
   const router = useRouter()
 
-  useEffect(() => {
-    if (localStorage.getItem('jwt')) {
-      router.push('/')
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (localStorage.getItem('jwt')) {
+  //     router.push('/')
+  //   }
+  // }, [])
 
   const handleChange = (event) => {
     setRegisterData({ ...registerData, [event.target.name]: event.target.value });
@@ -30,7 +30,7 @@ const Register = () => {
     // prevents the submit button from refreshing the page
     event.preventDefault();
     console.log(registerData);
-    registerUser({...registerData}).then(res => router.push('/'))
+    registerUser({...registerData})
   };
 
 

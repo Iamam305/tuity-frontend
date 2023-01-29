@@ -8,17 +8,7 @@ import { useEffect, createContext, useState } from "react";
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
-  useEffect(() => {
-    if (window !== undefined) {
-
-
-      if (!localStorage.getItem("jwt")) {
-        router.push("/auth/login");
-      } else {
-        
-      }
-    }
-  }, []);
+  
 
   return (
     < >
