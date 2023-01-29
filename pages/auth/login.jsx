@@ -26,7 +26,7 @@ const Login = () => {
     // prevents the submit button from refreshing the page
     event.preventDefault();
     console.log(loginData);
-    loginUser({ ...loginData }).then(router.push('/'));
+    loginUser({ ...loginData });
   };
 
   return (

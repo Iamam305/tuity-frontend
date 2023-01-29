@@ -30,7 +30,7 @@ const Register = () => {
     // prevents the submit button from refreshing the page
     event.preventDefault();
     console.log(registerData);
-    registerUser({ ...registerData }).then(router.push("/"));
+    registerUser({ ...registerData });
   };
 
   return (
