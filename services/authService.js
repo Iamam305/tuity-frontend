@@ -47,9 +47,15 @@ export const getUser = async () => {
         "x-auth-token": `${localStorage.getItem("jwt")}`,
       },
     });
-
-    return res;
+   
+    const {data} = await res
+    return  data;
   } catch (error) {
-    return error;
+    if (error.response.status == 401) {
+      localStorage.removeItem('jwt')
+    }
+    throw new Error(error)
+   
+    
   }
 };

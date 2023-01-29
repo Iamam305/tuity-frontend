@@ -13,8 +13,14 @@ export default function Home() {
   const [tutors, setTutors] = useState(null);
   console.log(tutors);
   useEffect(() => {
-    getTutors().then((res) => setTutors(res));
-    getUser().then((res) => setUser(res.data));
+    if (localStorage.getItem("jwt")) {
+      
+      getTutors().then((res) => setTutors(res));
+      getUser().then((res) => setUser(res.data));
+    }
+    if (!localStorage.getItem("jwt")) {
+      router.push("/auth/login")
+    }
   }, []);
 
  

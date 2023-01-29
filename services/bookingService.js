@@ -2,7 +2,7 @@ export const bookTutor = async ( detailsBody) => {
   
 
   try {
-    fetch("https://formsubmit.co/ajax/adwivedicg04@gmail.com", {
+    fetch("https://formsubmit.co/ajax/37ff61593916208312d2cf7e1c53b596", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -16,6 +16,6 @@ export const bookTutor = async ( detailsBody) => {
 
  
   } catch (error) {
-    throw error;
+    throw new Error(error)
   }
 };
