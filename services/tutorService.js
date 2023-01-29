@@ -10,14 +10,12 @@ export const getTutors = async () => {
         "x-auth-token": `${localStorage.getItem("jwt")}`,
       },
     });
-
-    return res;
+    const { data } = await res;
+    return data;
   } catch (error) {
-    return error;
+    throw new Error(error)
   }
 };
-
-
 
 export const addTutors = async ({
   name,
@@ -29,29 +27,25 @@ export const addTutors = async ({
   description,
 }) => {
   try {
- const body=JSON.stringify({
-  name,
-  age,
-  image,
-  price,
-  qualification,
-  timeSlots,
-  description,
-})
-const config= {
-  headers: {
-    "Content-Type": "application/json",
-    "x-auth-token": `${localStorage.getItem("jwt")}`,
-  },
-}
-    const res = await axios.post(
-      `${URL}/api/tutor`,
-      body,config
-     
-    );
+    const body = JSON.stringify({
+      name,
+      age,
+      image,
+      price,
+      qualification,
+      timeSlots,
+      description,
+    });
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+        "x-auth-token": `${localStorage.getItem("jwt")}`,
+      },
+    };
+    const res = await axios.post(`${URL}/api/tutor`, body, config);
 
     return res;
   } catch (error) {
-    return error;
+    throw new Error(error)
   }
 };
