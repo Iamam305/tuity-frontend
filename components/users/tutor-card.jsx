@@ -24,7 +24,7 @@ const TutorCard = ({ tutor }) => {
         alert("booking succesfull");
         setshowPopup(false);
       })
-      .catch(alert("something went wrong"));
+      .catch(e => alert("something went wrong"));
   };
   return (
     <>
