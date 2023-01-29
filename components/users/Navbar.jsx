@@ -31,7 +31,7 @@ const Navbar = () => {
                     <div className="h-6 w-2 bg-primary dark:bg-primaryLight" />
                   </div>
                   <span className="text-base font-bold text-gray-600 dark:text-white">
-                    SASS
+                    Tuity
                   </span>
                 </a>
                 <label
@@ -60,20 +60,20 @@ const Navbar = () => {
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        href="/auth/login"
                         className="block md:px-4 transition hover:text-primary dark:hover:text-primaryLight"
                       >
-                        <span>Portfolio</span>
-                      </a>
+                        <span>login</span>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="#"
+                      <Link
+                        href="/auth/register"
                         className="block md:px-4 transition hover:text-primary dark:hover:text-primaryLight"
                       >
-                        <span>Services</span>
-                      </a>
+                        <span>register</span>
+                      </Link>
                     </li>
                   </ul>
                 </div>
