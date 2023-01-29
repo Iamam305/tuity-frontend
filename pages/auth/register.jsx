@@ -5,16 +5,13 @@ import logo from "../../public/logo2.png";
 import { registerUser } from "../../services/authService";
 import { useRouter } from "next/router";
 
-
-
-
 const Register = () => {
   const [registerData, setRegisterData] = useState({
     name: "",
     email: "",
     password: "",
   });
-  const router = useRouter()
+  const router = useRouter();
 
   // useEffect(() => {
   //   if (localStorage.getItem('jwt')) {
@@ -23,16 +20,18 @@ const Register = () => {
   // }, [])
 
   const handleChange = (event) => {
-    setRegisterData({ ...registerData, [event.target.name]: event.target.value });
+    setRegisterData({
+      ...registerData,
+      [event.target.name]: event.target.value,
+    });
   };
 
   const handleSubmit = (event) => {
     // prevents the submit button from refreshing the page
     event.preventDefault();
     console.log(registerData);
-    registerUser({...registerData})
+    registerUser({ ...registerData }).then(router.push("/"));
   };
-
 
   return (
     <div className="relative py-16">
@@ -59,12 +58,12 @@ const Register = () => {
                     Name
                   </label>
                   <input
-                    type='text'
+                    type="text"
                     name="name"
                     id="Name"
                     autoComplete="username"
                     value={registerData.name}
-                    onChange={e => handleChange(e)}
+                    onChange={(e) => handleChange(e)}
                     className="focus:outline-none block w-full rounded-md border border-gray-200 dark:border-gray-600 bg-transparent px-4 py-3 text-gray-600 transition duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 focus:ring-cyan-300"
                   />
                 </div>
@@ -82,7 +81,7 @@ const Register = () => {
                     id="email"
                     autoComplete="email"
                     value={registerData.email}
-                    onChange={e => handleChange(e)}
+                    onChange={(e) => handleChange(e)}
                     className="focus:outline-none block w-full rounded-md border border-gray-200 dark:border-gray-600 bg-transparent px-4 py-3 text-gray-600 transition duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 focus:ring-cyan-300"
                   />
                 </div>
@@ -101,10 +100,9 @@ const Register = () => {
                     name="password"
                     id="pwd"
                     value={registerData.password}
-                    onChange={e => handleChange(e)}
+                    onChange={(e) => handleChange(e)}
                     autoComplete="current-password"
                     className="focus:outline-none block w-full rounded-md border border-gray-200 dark:border-gray-600 bg-transparent px-4 py-3 text-gray-600 transition duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 focus:ring-cyan-300"
-                    
                   />
                 </div>
 
@@ -126,11 +124,10 @@ const Register = () => {
                   />
                 </div>
                 <button
-             
-                  onClick={e => handleSubmit(e) }
+                  onClick={(e) => handleSubmit(e)}
                   className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95"
                 >
-                  <span  className="relative text-base font-semibold text-white dark:text-dark">
+                  <span className="relative text-base font-semibold text-white dark:text-dark">
                     Register
                   </span>
                 </button>
