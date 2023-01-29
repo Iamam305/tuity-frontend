@@ -5,10 +5,11 @@ import { getTutors } from "../services/tutorService";
 import { getUser } from "../services/authService";
 import Link from "next/link";
 import TutorCard from "../components/users/tutor-card";
-
+import { useRouter } from "next/router";
 export const UserContext = createContext("");
 
 export default function Home() {
+   const router =  useRouter()
   const [user, setUser] = useState(null);
   const [tutors, setTutors] = useState(null);
   console.log(tutors);
